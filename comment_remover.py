@@ -31,12 +31,12 @@ with open(args.infile,"r") as infile:
                     break
                 i+=1
         elif skip_str=="" and index2!=-1:
-            skip_str = '"""'
+            skip_str = "'''"
             edited_text+=text[line][:index2]
             i,LENGTH = 0,len(text[line])
             index4 = -1
             while(i<LENGTH):
-                index3 = text[line].find('"""',index2+2)
+                index3 = text[line].find("'''",index2+2)
                 if index3!=-1 and skip_str!="":
                     skip_str,index4 = "",index3+3
                 elif skip_str == "" and index2 != -1 and index4!=-1:
